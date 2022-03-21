@@ -121,3 +121,5 @@ if [ -e /etc/bash_completion.d/git-prompt ]; then
   source /etc/bash_completion.d/git-prompt
   export PS1='\[\e[96m\]\u\[\e[39m\]@\[\e[91m\]\h\[\e[39m\]:\[\e[94m\]\w\[\e[1;32m $(__git_ps1 "(%s)")\] \[\e[92m\]\n\$\[\e[39m\] '
 fi
+
+export Lang=ja_JP.UTF-8
