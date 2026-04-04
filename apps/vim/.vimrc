@@ -6,4 +6,3 @@ set expandtab
 set smartindent
 
 colorscheme murphy
-

@@ -1,0 +1,18 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.stickyScroll.maxLineCount": 20,
+  "editor.inlineSuggest.enabled": true,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "explorer.confirmDelete": false,
+  "git.suggestSmartCommit": false,
+  "git.openRepositoryInParentFolders": "never",
+}

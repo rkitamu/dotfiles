@@ -3,3 +3,6 @@
 	email = rkitamun@gmail.com
 [core]
 	editor = vim
+	autoCRLF = false
+[init]
+  defaultBranch = main
