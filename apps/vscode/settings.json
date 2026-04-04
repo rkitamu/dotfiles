@@ -15,4 +15,5 @@
   "explorer.confirmDelete": false,
   "git.suggestSmartCommit": false,
   "git.openRepositoryInParentFolders": "never",
+  "workbench.editor.enablePreview": true
 }
