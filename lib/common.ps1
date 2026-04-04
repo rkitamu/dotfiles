@@ -12,10 +12,11 @@ function Install-SymbolicLink {
 
     if ((Test-Path $Target) -and -not (Get-Item $Target).Attributes.HasFlag([System.IO.FileAttributes]::ReparsePoint)) {
         $Backup = "${Target}.bak"
-        Write-Host "  Backing up existing $Target -> $Backup"
+        Write-Output "  Backing up existing $Target -> $Backup"
         Move-Item -Path $Target -Destination $Backup -Force
     }
 
     New-Item -ItemType SymbolicLink -Path $Target -Target $Source -Force | Out-Null
-    Write-Host "[$Label] Linked $Target -> $Source"
+    Write-Output "[$Label] Linked $Target -> $Source"
 }
+
