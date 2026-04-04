@@ -14,7 +14,7 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get install -y shellcheck
       - name: Run shellcheck
-        run: find . -name "*.sh" | xargs shellcheck -x
+        run: find . -name "*.sh" | xargs shellcheck -x --source-path=SCRIPTDIR
 
   lint-ps1:
     name: Lint PowerShell scripts
