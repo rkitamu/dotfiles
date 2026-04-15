@@ -1,4 +1,7 @@
 {
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": false,
   "files.autoSave": "afterDelay",
   "files.eol": "\n",
   "editor.tabSize": 2,
@@ -15,5 +18,5 @@
   "explorer.confirmDelete": false,
   "git.suggestSmartCommit": false,
   "git.openRepositoryInParentFolders": "never",
-  "workbench.editor.enablePreview": true
+  "workbench.editor.enablePreview": false,
 }
