@@ -30,6 +30,7 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 | `vim/` | `~/.vimrc` | |
 | `vscode/` | OS-dependent VS Code User dir | |
 | `ghostty/` | `~/.config/ghostty/config` | Linux / macOS のみ |
+| `zsh/` | `~/.zshrc` | Linux / macOS のみ |
 | `hhkb/` | - | HHKB keyboard layout (manual) |
 
 ## Note

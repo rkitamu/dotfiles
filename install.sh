@@ -8,7 +8,7 @@ echo "OS: $(uname -s)"
 echo ""
 
 # List of app directories with install scripts
-APPS=(git vim vscode ghostty)
+APPS=(git vim vscode ghostty zsh)
 
 for APP in "${APPS[@]}"; do
   INSTALLER="$SCRIPT_DIR/apps/$APP/install.sh"
