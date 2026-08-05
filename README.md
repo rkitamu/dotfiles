@@ -31,6 +31,7 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 | `vscode/` | OS-dependent VS Code User dir | |
 | `ghostty/` | `~/.config/ghostty/config` | Linux / macOS のみ |
 | `zsh/` | `~/.zshrc` | Linux / macOS のみ |
+| `gnome/` | dconf (power / mouse) | GNOME セッションのみ。リンクではなく `dconf load` |
 | `hhkb/` | - | HHKB keyboard layout (manual) |
 
 ## Note
@@ -68,6 +69,32 @@ chsh -s "$(command -v zsh)"
 ```
 
 環境固有の設定は `~/.zshrc.local` に書けば読み込まれる (git 管理外)。
+
+## gnome
+
+GNOME の設定は dconf (バイナリ DB) にあるためシンボリックリンクできない。
+`apps/gnome/settings.ini` をテキストの正として `dconf load` / `dconf dump` でやり取りする。
+
+```bash
+bash apps/gnome/install.sh   # settings.ini -> システム
+bash apps/gnome/export.sh    # システム -> settings.ini (git diff で確認)
+```
+
+`settings.ini` は `export.sh` の生成物なので直接編集しない。値を変えるときは GNOME の
+設定 UI か `gsettings` で変更してから `export.sh` を実行する。
+対象キーを増やすときは `export.sh` の `PATHS` に追記してから `export.sh` を実行する。
+
+管理対象は以下のみ。他のキーには一切触れない。
+
+| キー | 意味 |
+|------|------|
+| `settings-daemon/plugins/power/sleep-inactive-ac-type` | 電源接続時の自動サスペンド動作 (`nothing` で無効) |
+| `settings-daemon/plugins/power/sleep-inactive-ac-timeout` | 同上のタイムアウト秒数 (`type='nothing'` の間は未使用) |
+| `desktop/session/idle-delay` | 画面のブランク表示までの秒数。設定 UI の「電源」パネル内 |
+| `desktop/peripherals/mouse/speed` | ポインタ速度 (-1.0 〜 1.0) |
+
+`dconf dump /` の全体をコミットしないこと。通知許可やウィンドウ位置など、
+アプリを起動するたびに増える状態値が混ざって diff が読めなくなる。
 
 ## vscode
 
