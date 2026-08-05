@@ -16,7 +16,7 @@ gtk-wide-tabs = false
 scrollback-limit = 100000
 
 # カーソル
-cursor-style = underline
+cursor-style = block
 cursor-style-blink = false
 
 # キーバインド
