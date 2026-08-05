@@ -333,7 +333,7 @@ _load_plugin zsh-syntax-highlighting
 # プロンプト
 #   zsh 組み込みの vcs_info だけで組む 2 行プロンプト (外部バイナリ不要)
 #
-#     ~/dotfiles  main ✚
+#     ~/dotfiles [main+]
 #     ❯
 # -----------------------------------------------------------------------------
 autoload -Uz vcs_info add-zsh-hook
@@ -341,10 +341,10 @@ zmodload zsh/datetime
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true   # 遅い巨大リポジトリでは false に
-zstyle ':vcs_info:git:*' stagedstr   '%F{green}✚%f'
-zstyle ':vcs_info:git:*' unstagedstr '%F{yellow}✚%f'
-zstyle ':vcs_info:git:*' formats       ' %F{magenta} %b%f%c%u'
-zstyle ':vcs_info:git:*' actionformats ' %F{magenta} %b%f|%F{red}%a%f%c%u'
+zstyle ':vcs_info:git:*' stagedstr   '%F{green}+%f'
+zstyle ':vcs_info:git:*' unstagedstr '%F{yellow}+%f'
+zstyle ':vcs_info:git:*' formats       ' %F{magenta}[%b%f%c%u%F{magenta}]%f'
+zstyle ':vcs_info:git:*' actionformats ' %F{magenta}[%b%f|%F{red}%a%f%c%u%F{magenta}]%f'
 
 # 2 秒以上かかったコマンドは所要時間を右プロンプトに出す
 _prompt_timer_start() { _prompt_timer=$EPOCHREALTIME }
