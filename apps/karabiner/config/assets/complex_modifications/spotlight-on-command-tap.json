@@ -1,0 +1,32 @@
+{
+  "title": "Command 単押しで Spotlight",
+  "rules": [
+    {
+      "description": "左右の Command を単押しで Spotlight、押しながらは通常の Command",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{ "key_code": "left_command" }],
+          "to_if_alone": [
+            { "key_code": "spacebar", "modifiers": ["left_command"] }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{ "key_code": "right_command" }],
+          "to_if_alone": [
+            { "key_code": "spacebar", "modifiers": ["left_command"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -32,6 +32,9 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 | `ghostty/` | `~/.config/ghostty/config` | Linux / macOS のみ |
 | `zsh/` | `~/.zshrc` | Linux / macOS のみ |
 | `gnome/` | dconf (power / mouse) | GNOME セッションのみ。リンクではなく `dconf load` |
+| `karabiner/` | `~/.config/karabiner` | macOS のみ。ディレクトリごとリンク |
+| `alttab/` | AltTab (defaults) | macOS のみ。リンクではなく `defaults import` |
+| `herdr/` | `~/.config/herdr/config.toml` | Linux / macOS |
 | `hhkb/` | - | HHKB keyboard layout (manual) |
 
 ## Note
@@ -95,6 +98,25 @@ bash apps/gnome/export.sh    # システム -> settings.ini (git diff で確認)
 
 `dconf dump /` の全体をコミットしないこと。通知許可やウィンドウ位置など、
 アプリを起動するたびに増える状態値が混ざって diff が読めなくなる。
+
+## karabiner
+
+GUI が `karabiner.json` を atomic rename で書き換えるため、ファイル単位のリンクは剥がれる。
+`~/.config/karabiner` をディレクトリごとリンクしており、GUI での変更はそのままリポジトリの
+diff に現れる (`automatic_backups/` は gitignore 済み)。
+
+## alttab
+
+AltTab の設定は defaults (plist) にあるため gnome と同じ export/import 方式。
+
+```bash
+bash apps/alttab/install.sh   # settings.plist -> システム (起動中なら AltTab を再起動)
+bash apps/alttab/export.sh    # システム -> settings.plist (git diff で確認)
+```
+
+`settings.plist` は `export.sh` の生成物なので直接編集しない。AltTab の設定 UI で変更して
+から `export.sh` を実行する。テレメトリ・ウィンドウ位置・アップデータ記録などの状態値は
+export 時に除外される。
 
 ## vscode
 

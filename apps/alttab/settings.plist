@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>appearanceSize</key>
+	<string>0</string>
+	<key>appearanceSizeOverride</key>
+	<string>0</string>
+	<key>captureWindowsInBackground</key>
+	<string>false</string>
+	<key>hideColoredCircles</key>
+	<string>true</string>
+	<key>hideSpaceNumberLabels</key>
+	<string>true</string>
+	<key>hideStatusIcons</key>
+	<string>true</string>
+	<key>preferencesVersion</key>
+	<string>11.4.3</string>
+	<key>previewFadeInAnimation</key>
+	<string>false</string>
+	<key>screenRecordingPermissionSkipped</key>
+	<string>true</string>
+	<key>settingsWindowShownOnFirstLaunch</key>
+	<string>true</string>
+	<key>showOnScreen</key>
+	<string>1</string>
+	<key>showTitles</key>
+	<string>0</string>
+	<key>updatePolicy</key>
+	<string>1</string>
+	<key>windowDisplayDelay</key>
+	<string>50</string>
+</dict>
+</plist>

@@ -1,10 +1,41 @@
 # 外観
-theme = Monokai Remastered
-font-family = "JetBrainsMono Nerd Font"
-font-size = 12
+font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-style = Regular
+font-size = 12.5
+font-thicken = true
 window-padding-x = 8
 window-padding-y = 8
-background-opacity = 0.95
+background-opacity = 0.90
+background-blur = true
+
+# Terminal.app「my term」プロファイル再現 (1-6 はダイナミック前景カラーの実測値を一段明るくした値)
+foreground = #ffffff
+background = #171717
+palette = 0=#000000
+palette = 1=#fb5c4d
+palette = 2=#4ef44e
+palette = 3=#ebed4e
+palette = 4=#5fb2fb
+palette = 5=#fb5cfb
+palette = 6=#5fe6f4
+palette = 7=#d5d5d5
+palette = 8=#666666
+palette = 9=#fb0007
+palette = 10=#22ff07
+palette = 11=#ffff0b
+palette = 12=#1acbff
+palette = 13=#fb00fe
+palette = 14=#21ffff
+palette = 15=#e5e5e5
+cursor-color = #febc09
+cursor-text = #000000
+selection-background = #3f638b
+selection-foreground = #ffffff
+minimum-contrast = 1.1
+adjust-cell-height = -10%
+
+# Option を Alt として扱う (herdr / readline の Meta 用。特殊文字入力は不可になる)
+macos-option-as-alt = true
 
 # ウィンドウ
 window-decoration = auto
@@ -19,7 +50,10 @@ scrollback-limit = 100000
 cursor-style = block
 cursor-style-blink = false
 
-# キーバインド
+# キーバインド（Linux 版 Ghostty のデフォルトに揃える）
+keybind = ctrl+shift+comma=reload_config
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
 keybind = ctrl+shift+t=new_tab
 keybind = ctrl+shift+w=close_surface
 keybind = ctrl+shift+e=new_split:right
@@ -28,6 +62,39 @@ keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+k=goto_split:up
 keybind = ctrl+shift+j=goto_split:down
+
+# アプリ操作
+keybind = ctrl+comma=open_config
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+shift+q=quit
+keybind = ctrl+enter=toggle_fullscreen
+keybind = ctrl+shift+enter=toggle_split_zoom
+keybind = ctrl+shift+z=undo
+keybind = ctrl+shift+y=redo
+
+# タブ移動
+keybind = ctrl+page_up=previous_tab
+keybind = ctrl+page_down=next_tab
+
+# 画面内検索 (スクロールバック対象。シェルの Ctrl+R とは別物)
+keybind = ctrl+shift+f=start_search
+keybind = ctrl+shift+g=navigate_search:next
+keybind = ctrl+shift+b=navigate_search:previous
+keybind = ctrl+shift+a=select_all
+
+# プロンプト間ジャンプ
+keybind = ctrl+shift+arrow_up=jump_to_prompt:-1
+keybind = ctrl+shift+arrow_down=jump_to_prompt:1
+
+# フォントサイズ
+keybind = ctrl+plus=increase_font_size:1
+# readline の undo (C-_) を潰す。undo は Ctrl+/ で代替可
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+
+# その他
+keybind = ctrl+shift+p=toggle_command_palette
+keybind = ctrl+shift+i=inspector:toggle
 
 # シェル統合
 shell-integration = detect
