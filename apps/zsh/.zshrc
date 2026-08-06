@@ -181,8 +181,21 @@ if (( $+commands[eza] )); then
   alias ll='eza -l --group-directories-first --icons=auto --git --time-style=long-iso'
   alias la='ll --all'
   alias lt='eza --tree --level=2 --group-directories-first --icons=auto'
-else
+elif (( $+commands[gls] )); then
+  # macOS + coreutils (brew install coreutils)
+  alias ls='gls --color=auto --group-directories-first'
+  alias ll='ls -lh'
+  alias la='ls -lha'
+  alias lt='ls -R'
+elif command ls --version >/dev/null 2>&1; then
+  # GNU coreutils の ls
   alias ls='ls --color=auto --group-directories-first'
+  alias ll='ls -lh'
+  alias la='ls -lha'
+  alias lt='ls -R'
+else
+  # BSD の ls (macOS 標準) は --group-directories-first を持たない
+  alias ls='ls -G'
   alias ll='ls -lh'
   alias la='ls -lha'
   alias lt='ls -R'
