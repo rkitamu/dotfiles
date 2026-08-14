@@ -12,7 +12,9 @@ agent_panel_sort = "spaces"
 
 show_agent_labels_on_pane_borders = false
 [ui.toast]
-delivery = "system"
+# "system" は osascript 発行になりクリック先を指定できない (テキストエディットが開く)。
+# "terminal" ならホスト端末が発行元になり、クリックでその端末にフォーカスが戻る。
+delivery = "terminal"
 
 [ui.sound]
 enabled = false

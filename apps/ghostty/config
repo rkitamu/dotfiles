@@ -67,7 +67,6 @@ keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+comma=open_config
 keybind = ctrl+shift+n=new_window
 keybind = ctrl+shift+q=quit
-keybind = ctrl+enter=toggle_fullscreen
 keybind = ctrl+shift+enter=toggle_split_zoom
 keybind = ctrl+shift+z=undo
 keybind = ctrl+shift+y=redo
