@@ -243,6 +243,17 @@ alias gpl='git pull --rebase'
 # 拡張子だけで開けるようにする
 alias -s {md,txt,json,yml,yaml,toml}=$EDITOR
 
+# MCP Inspector
+alias mcpi='npx @modelcontextprotocol/inspector'
+
+# カレントの mcp-inspector.json と最初のサーバーをデフォルトに起動
+mcpic() {
+  local cfg=${1:-mcp-inspector.json}
+  npx @modelcontextprotocol/inspector \
+    --config "$cfg" \
+    --server "$(jq -r '.mcpServers | keys[0]' "$cfg")"
+}
+
 # -----------------------------------------------------------------------------
 # 関数
 # -----------------------------------------------------------------------------
@@ -392,3 +403,5 @@ fi
 
 # 最後の判定結果を終了ステータスとして残さない (初回プロンプトが赤くなるのを防ぐ)
 true
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"

@@ -18,5 +18,8 @@
   "explorer.confirmDelete": false,
   "git.suggestSmartCommit": false,
   "git.openRepositoryInParentFolders": "never",
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "workbench.iconTheme": "vscode-icons",
+  "security.workspace.trust.untrustedFiles": "open"
 }
