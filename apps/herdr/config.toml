@@ -22,3 +22,23 @@ enabled = false
 [theme]
 name = "catppuccin"
 auto_switch = false
+
+# MongoDB 風グリーン(ネイビー地 + 緑アクセント)。catppuccin をベースにトークンだけ上書き。
+# 背景をホスト端末に合わせたいときは panel_bg を "reset" にする。
+[theme.custom]
+accent        = "#13aa52"
+panel_bg      = "#001e2b"
+surface0      = "#0a2a36"
+surface1      = "#123a44"
+surface_dim   = "#00161f"
+overlay0      = "#3d5a63"
+overlay1      = "#5a7a84"
+text          = "#e3fcf7"
+subtext0      = "#9ab8b5"
+green         = "#00ed64"
+teal          = "#2dd4bf"
+mauve         = "#5eead4"
+blue          = "#4fb3d9"
+yellow        = "#e0c36a"
+peach         = "#e8a06a"
+red           = "#ef6a6a"

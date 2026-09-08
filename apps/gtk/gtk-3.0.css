@@ -1,0 +1,7 @@
+/* GTK3 と、Mutter が描くサーバーサイド装飾 (Chrome 等)。~/.config/gtk-3.0/gtk.css にリンク。
+ * 色は GNOME のダークテーマに任せ、高さだけ詰める。 */
+headerbar, .titlebar { min-height: 0; padding-top: 1px; padding-bottom: 1px; }
+headerbar button { min-height: 20px; padding-top: 2px; padding-bottom: 2px; }
+.default-decoration.titlebar { min-height: 20px; padding: 0 6px; }
+/* タイトル文字の太字を解除 */
+headerbar .title, .titlebar .title { font-weight: normal; }

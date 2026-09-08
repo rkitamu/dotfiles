@@ -1,0 +1,10 @@
+/* GTK4 / libadwaita (Ghostty, Nautilus, 設定 など)。~/.config/gtk-4.0/gtk.css にリンク。
+ * 色は GNOME のダークテーマに任せ、ヘッダーバーの高さだけ詰める。
+ * 既定 47px = 内側の箱 padding 6px*2 + ボタン 34px。箱 1px*2 + ボタン 26px で 28px 前後にする。 */
+headerbar { min-height: 0; }
+headerbar > windowhandle > box { padding-top: 1px; padding-bottom: 1px; }
+headerbar button { min-height: 20px; padding-top: 2px; padding-bottom: 2px; }
+windowcontrols > button { min-height: 20px; min-width: 20px; margin-top: 0; margin-bottom: 0; }
+windowcontrols > button > image { min-height: 16px; min-width: 16px; padding: 3px; }
+/* タイトル文字の太字を解除 */
+headerbar .title, windowtitle .title { font-weight: normal; }
