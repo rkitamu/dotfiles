@@ -403,5 +403,3 @@ fi
 
 # 最後の判定結果を終了ステータスとして残さない (初回プロンプトが赤くなるのを防ぐ)
 true
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
