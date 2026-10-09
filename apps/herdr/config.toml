@@ -2,18 +2,22 @@ onboarding = false
 [keys]
 # prefix はホームポジションで押せる ctrl+k (シェルの kill-line ^K は潰れる)。
 # 右手ホームポジションで統一: y=エージェント / u=ワークスペース / i=タブ / o=ペイン。
-# alt+キー=次へ巡回 / prefix+キー=新規作成 / prefix+shift+キー=閉じる。
+# alt+キー=次へ巡回 / alt+shift+キー=前へ巡回 / prefix+キー=新規作成 / prefix+shift+キー=閉じる。
 prefix = "ctrl+k"
-cycle_pane_next = ["prefix+tab", "alt+o"]
-next_tab        = ["prefix+n", "alt+i"]
-next_agent      = ["alt+y"]
-next_workspace  = ["alt+u"]
-new_workspace   = ["prefix+u"]
-new_tab         = ["prefix+i"]
-split_vertical  = ["prefix+o"]
-close_workspace = ["prefix+shift+u"]
-close_tab       = ["prefix+shift+i"]
-close_pane      = ["prefix+shift+o"]
+cycle_pane_next     = ["prefix+tab", "alt+o"]
+cycle_pane_previous = ["prefix+shift+tab", "alt+shift+o"]
+next_tab            = ["prefix+n", "alt+i"]
+previous_tab        = ["prefix+p", "alt+shift+i"]
+next_agent          = ["alt+y"]
+previous_agent      = ["alt+shift+y"]
+next_workspace      = ["alt+u"]
+previous_workspace  = ["alt+shift+u"]
+new_workspace       = ["prefix+u"]
+new_tab             = ["prefix+i"]
+split_vertical      = ["prefix+o"]
+close_workspace     = ["prefix+shift+u"]
+close_tab           = ["prefix+shift+i"]
+close_pane          = ["prefix+shift+o"]
 
 [ui]
 agent_panel_sort = "spaces"
