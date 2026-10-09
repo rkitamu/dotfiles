@@ -1,11 +1,12 @@
 onboarding = false
 [keys]
 # prefix はホームポジションで押せる ctrl+k (シェルの kill-line ^K は潰れる)。
-# 巡回系のみ直接キー: alt+o=ペイン / alt+n=タブ / alt+w=ワークスペース。
+# 巡回系のみ直接キー (右手ホームポジション): alt+y=ワークスペース / alt+u=エージェント / alt+i=タブ / alt+o=ペイン。
 prefix = "ctrl+k"
 cycle_pane_next = ["prefix+tab", "alt+o"]
-next_tab        = ["prefix+n", "alt+n"]
-next_workspace  = ["alt+w"]
+next_tab        = ["prefix+n", "alt+i"]
+next_agent      = ["alt+u"]
+next_workspace  = ["alt+y"]
 
 [ui]
 agent_panel_sort = "spaces"
