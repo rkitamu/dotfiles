@@ -19,6 +19,11 @@ close_workspace     = ["prefix+shift+u"]
 close_tab           = ["prefix+shift+i"]
 close_pane          = ["prefix+shift+o"]
 
+[[keys.command]]
+key = "prefix+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
+
 [ui]
 agent_panel_sort = "spaces"
 

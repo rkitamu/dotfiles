@@ -1,0 +1,6 @@
+toggle_direction = "down"
+markdown_view = "rendered"
+
+[keybindings]
+select = ["s"]
+send   = ["S"]

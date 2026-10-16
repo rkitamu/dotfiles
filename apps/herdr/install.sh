@@ -21,3 +21,13 @@ mkdir -p "$HERDR_DIR"
 
 # ログ・ソケット・セッション状態が同居するため、ディレクトリではなくファイルをリンクする
 link_file "$SCRIPT_DIR/config.toml" "$HERDR_DIR/config.toml" "herdr"
+
+# レビュー用プラグイン reviewr。インストール済みならスキップ
+if command -v herdr >/dev/null && ! herdr plugin list | grep -q 'persiyanov.reviewr'; then
+  herdr plugin install persiyanov/herdr-reviewr --yes
+fi
+
+# reviewr の設定はプラグインごとのディレクトリに置く
+REVIEWR_DIR="$HERDR_DIR/plugins/config/persiyanov.reviewr"
+mkdir -p "$REVIEWR_DIR"
+link_file "$SCRIPT_DIR/reviewr.toml" "$REVIEWR_DIR/config.toml" "herdr"
