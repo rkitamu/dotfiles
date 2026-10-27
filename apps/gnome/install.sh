@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-echo "[gnome] Installing GNOME settings (power / mouse)..."
+echo "[gnome] Installing GNOME settings (power / mouse / tiling)..."
 
 # GNOME 以外 (macOS / 他 DE / CI) では何もしない
 case "${XDG_CURRENT_DESKTOP:-}" in
