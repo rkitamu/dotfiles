@@ -1,5 +1,6 @@
 toggle_direction = "down"
 markdown_view = "rendered"
+auto_open = false
 
 [keybindings]
 select = ["s"]
