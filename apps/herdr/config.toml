@@ -28,6 +28,7 @@ command = "persiyanov.reviewr.toggle"
 agent_panel_sort = "spaces"
 
 show_agent_labels_on_pane_borders = false
+window_title = "Herdr: {workspace}: {tab}"
 [ui.toast]
 # "system" は osascript 発行になりクリック先を指定できない (テキストエディットが開く)。
 # "terminal" ならホスト端末が発行元になり、クリックでその端末にフォーカスが戻る。
