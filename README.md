@@ -28,6 +28,7 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 |-----------|--------|------|
 | `git/` | `~/.gitconfig` | |
 | `vim/` | `~/.vimrc` | |
+| `nvim/` | `~/.config/nvim/init.lua` | |
 | `vscode/` | OS-dependent VS Code User dir | |
 | `ghostty/` | `~/.config/ghostty/config` | Linux / macOS のみ |
 | `zsh/` | `~/.zshrc` | Linux / macOS のみ |

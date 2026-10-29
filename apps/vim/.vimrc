@@ -5,4 +5,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 
-colorscheme murphy
+set termguicolors
+colorscheme habamax
+" NOTE: Ghostty の背景透過を活かすため、カラースキームの背景色を外す
+highlight Normal guibg=NONE ctermbg=NONE
