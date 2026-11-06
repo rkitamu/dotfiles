@@ -6,9 +6,14 @@
 	autoCRLF = false
 [init]
   defaultBranch = main
+[pull]
+	rebase = false
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
+# Machine-specific settings (not in dotfiles). Keep this last so it overrides the above.
+[include]
+	path = ~/.gitconfig.local
