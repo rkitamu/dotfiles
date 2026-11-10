@@ -1,6 +1,8 @@
+# Refuse to commit where no account is assigned, so neither the personal nor the work identity leaks.
 [user]
-	name = rkitamu
-	email = rkitamun@gmail.com
+	useConfigOnly = true
+[includeIf "gitdir:~/dotfiles/"]
+	path = ~/dotfiles/apps/git/dotfiles.gitconfig
 [core]
 	editor = vim
 	autoCRLF = false
