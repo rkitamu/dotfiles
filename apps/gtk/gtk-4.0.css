@@ -8,8 +8,3 @@ windowcontrols > button { min-height: 20px; min-width: 20px; margin-top: 0; marg
 windowcontrols > button > image { min-height: 16px; min-width: 16px; padding: 3px; }
 /* タイトル文字の太字を解除 */
 headerbar .title, windowtitle .title { font-weight: normal; }
-/* タブバー (Ghostty の gtk-titlebar-style = tabs など)。既定は tabbox 上下 6px + タブ 26px+4px*2 で 46px */
-tabbar tabbox { min-height: 0; padding-top: 4px; padding-bottom: 4px; }
-tabbar tab { min-height: 0; padding: 0 4px; }
-tabbar tab button.image-button { min-width: 16px; min-height: 16px; }
-tabbar .start-action, tabbar .end-action { padding-top: 4px; padding-bottom: 4px; }
