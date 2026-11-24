@@ -23,8 +23,6 @@ case "$(uname -s)" in
     ;;
 esac
 
-mkdir -p "$GHOSTTY_DIR"
-
 link_file "$SCRIPT_DIR/config" "$GHOSTTY_DIR/config" "ghostty"
 # config の `config-file = ?config.os` はリンク先ではなくこのディレクトリ基準で解決される
 link_file "$SCRIPT_DIR/$OS_CONFIG" "$GHOSTTY_DIR/config.os" "ghostty"

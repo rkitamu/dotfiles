@@ -21,7 +21,6 @@ case "$(uname -s)" in
     ;;
 esac
 
-mkdir -p "$VSCODE_DIR"
 
 for FILE in settings.json keybindings.json; do
   SOURCE="$SCRIPT_DIR/$FILE"
