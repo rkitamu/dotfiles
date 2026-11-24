@@ -1,8 +1,7 @@
 # Refuse to commit where no account is assigned, so neither the personal nor the work identity leaks.
+# Which identity to use where is machine-specific: write includeIf in ~/.gitconfig.local (see README).
 [user]
 	useConfigOnly = true
-[includeIf "gitdir:~/dotfiles/"]
-	path = ~/dotfiles/apps/git/dotfiles.gitconfig
 [core]
 	editor = vim
 	autoCRLF = false

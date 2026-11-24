@@ -7,3 +7,4 @@ source "$SCRIPT_DIR/../../lib/common.sh"
 
 echo "[git] Installing gitconfig..."
 link_file "$SCRIPT_DIR/.gitconfig" "$HOME/.gitconfig" "git"
+

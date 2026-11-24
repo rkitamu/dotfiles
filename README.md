@@ -8,6 +8,9 @@
 # Linux / macOS
 bash install.sh
 
+# 何が変わるかだけを表示する (何も変更しない)
+bash install.sh --dry-run
+
 # Windows (PowerShell as Administrator)
 powershell -ExecutionPolicy Bypass -File install.ps1
 ```
@@ -26,7 +29,7 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 
 | Directory | Target | Note |
 |-----------|--------|------|
-| `git/` | `~/.gitconfig` | |
+| `git/` | `~/.gitconfig` | 下記 |
 | `vim/` | `~/.vimrc` | |
 | `nvim/` | `~/.config/nvim/init.lua` | |
 | `vscode/` | OS-dependent VS Code User dir | |
@@ -41,8 +44,28 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 ## Note
 
 - Windows ではシンボリックリンク作成に管理者権限が必要
-- 既存ファイルがある場合は `.bak` にバックアップされる
+- 既存ファイルがある場合は `.bak` に退避される。`.bak` がすでにあれば `.bak.<日時>` に退避する。不要になった退避ファイルは手で消す
+- 何度流してもよい。すでにリンク済みのものは変更しない
+- どこに clone しても動く。置き場所を変えたら install.sh を流し直す
 - インストーラはシンボリックリンクを張るだけで、ソフトウェアのインストールはしない
+
+## git
+
+identity が設定されていない場所ではコミットできない。どこでどの identity を使うかは、
+マシンごとに `~/.gitconfig.local` (dotfiles の外) に書く。
+
+```ini
+# ~/.gitconfig.local
+[includeIf "gitdir:~/personal/"]
+	path = ~/.config/git/personal.gitconfig
+```
+
+```ini
+# ~/.config/git/personal.gitconfig
+[user]
+	name = Your Name
+	email = you@example.com
+```
 
 ## zsh
 
@@ -77,10 +100,11 @@ chsh -s "$(command -v zsh)"
 ## gnome
 
 GNOME の設定は dconf (バイナリ DB) にあるためシンボリックリンクできない。
-`apps/gnome/settings.ini` をテキストの正として `dconf load` / `dconf dump` でやり取りする。
+`apps/gnome/settings.ini` をテキストの正として dconf とやり取りする。
 
 ```bash
-bash apps/gnome/install.sh   # settings.ini -> システム
+bash apps/gnome/install.sh --dry-run   # 上書きされるキーの今の値と新しい値を表示する
+bash apps/gnome/install.sh   # settings.ini -> システム (変わるキーの今の値は ~/.local/state/dotfiles/gnome/ に残る)
 bash apps/gnome/export.sh    # システム -> settings.ini (git diff で確認)
 ```
 
@@ -112,7 +136,8 @@ diff に現れる (`automatic_backups/` は gitignore 済み)。
 AltTab の設定は defaults (plist) にあるため gnome と同じ export/import 方式。
 
 ```bash
-bash apps/alttab/install.sh   # settings.plist -> システム (起動中なら AltTab を再起動)
+bash apps/alttab/install.sh --dry-run   # 今の設定との差を表示する
+bash apps/alttab/install.sh   # settings.plist -> システム (起動中なら AltTab を再起動。今の設定は ~/.local/state/dotfiles/alttab/ に残る)
 bash apps/alttab/export.sh    # システム -> settings.plist (git diff で確認)
 ```
 
