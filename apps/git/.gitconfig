@@ -2,7 +2,9 @@
 [user]
 	useConfigOnly = true
 [includeIf "gitdir:~/dotfiles/"]
-	path = ~/dotfiles/apps/git/dotfiles.gitconfig
+	path = ~/dotfiles/apps/git/personal.gitconfig
+[includeIf "gitdir:~/personal/"]
+	path = ~/dotfiles/apps/git/personal.gitconfig
 [core]
 	editor = vim
 	autoCRLF = false
