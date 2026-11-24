@@ -27,5 +27,3 @@ dotfiles は環境を壊しやすく、過去にも壊している（main の `i
   - libadwaita のヘッダーバーの高さは `headerbar > windowhandle > box` の padding とボタンサイズで決まる。`headerbar` の min-height ではない。
   - 検証は `Gtk.CssProvider` でのパースチェックと `Adw.HeaderBar` の実測で行う。
 - herdr: `apps/herdr/config.toml` の `[theme.custom]` にグリーン配色。`sidebar_bg` / `active_row_bg` / `selection_bg` は herdr 0.9.0 以上が必要。反映は `herdr server reload-config`。
-- 壁紙（dotfiles 外）: `~/Pictures/wallpapers/gen.py <style[:purple|:green]> <seeds...>`。シンボルは `symbols.py` と `symbols/fork/`。現在の壁紙は `hexgrid_green/hexgrid_green-1.png`。
-- dotfiles 外で gsettings / dconf のみで設定しているもの: accent-color green、titlebar-font "Ubuntu Sans 11"、Dash to Panel のグラデーション色（dconf）。
