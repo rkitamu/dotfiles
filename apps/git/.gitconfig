@@ -1,10 +1,9 @@
 # Refuse to commit where no account is assigned, so neither the personal nor the work identity leaks.
 [user]
 	useConfigOnly = true
-[includeIf "gitdir:~/dotfiles/"]
-	path = ~/dotfiles/apps/git/personal.gitconfig
+# Personal identity under ~/personal. install.sh links apps/git/personal.gitconfig (not in git) here.
 [includeIf "gitdir:~/personal/"]
-	path = ~/dotfiles/apps/git/personal.gitconfig
+	path = ~/.config/git/personal.gitconfig
 [core]
 	editor = vim
 	autoCRLF = false

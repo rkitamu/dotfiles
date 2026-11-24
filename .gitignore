@@ -1,2 +1,5 @@
 .DS_Store
 apps/karabiner/config/automatic_backups/
+
+# identity (git 管理外)
+apps/git/personal.gitconfig
