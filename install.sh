@@ -15,7 +15,7 @@ fi
 echo ""
 
 # List of app directories with install scripts
-APPS=(git vim nvim vscode ghostty zsh gnome gtk karabiner alttab herdr)
+APPS=(git vim nvim vscode ghostty zsh gnome gtk karabiner alttab herdr claude)
 
 DOTFILES_CHANGE_LOG="$(mktemp "${TMPDIR:-/tmp}/dotfiles-install.XXXXXX")"
 export DOTFILES_CHANGE_LOG

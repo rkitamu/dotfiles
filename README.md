@@ -39,6 +39,7 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 | `karabiner/` | `~/.config/karabiner` | macOS のみ。ディレクトリごとリンク |
 | `alttab/` | AltTab (defaults) | macOS のみ。リンクではなく `defaults import` |
 | `herdr/` | `~/.config/herdr/config.toml` | Linux / macOS |
+| `claude/` | `~/.claude/CLAUDE.md` | Claude Code の全セッション共通のルール |
 | `hhkb/` | - | HHKB keyboard layout (manual) |
 
 ## Note
