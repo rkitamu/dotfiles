@@ -1,9 +1,6 @@
 # 外観
-font-family = "JetBrainsMonoNL Nerd Font Mono"
-font-family = "Hiragino Kaku Gothic ProN"
 font-style = Regular
 font-size = 12.5
-font-thicken = true
 window-padding-x = 8
 window-padding-y = 8
 background-opacity = 0.90
@@ -33,16 +30,9 @@ cursor-text = #000000
 selection-background = #3f638b
 selection-foreground = #ffffff
 minimum-contrast = 1.1
-adjust-cell-height = -10%
-
-# Option を Alt として扱う (herdr / readline の Meta 用。特殊文字入力は不可になる)
-macos-option-as-alt = true
 
 # ウィンドウ
 window-decoration = auto
-gtk-titlebar = true
-gtk-tabs-location = top
-gtk-wide-tabs = false
 
 # スクロールバック（ログ解析用に多め）
 scrollback-limit = 100000
@@ -99,3 +89,7 @@ keybind = ctrl+shift+i=inspector:toggle
 # シェル統合
 shell-integration = detect
 shell-integration-features = no-cursor,sudo,title
+
+# OS 別の設定 (フォントなど)。install.sh が macos.config / linux.config を
+# ~/.config/ghostty/config.os としてリンクする。後から読まれるのでここより優先
+config-file = ?config.os

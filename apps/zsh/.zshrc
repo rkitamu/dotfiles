@@ -25,6 +25,10 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # PATH は重複を自動で除去する
 typeset -U path PATH
+
+# 端末固有の初期設定 (git 管理外。Homebrew の PATH など、ツール検出より前に要るもの)
+[[ -f "$HOME/.local/zshrc" ]] && source "$HOME/.local/zshrc"
+
 path=(
   "$HOME/.local/bin"(N)
   "$HOME/bin"(N)
