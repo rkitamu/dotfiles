@@ -5,6 +5,7 @@
   - `bash install.sh --dry-run`（または `DOTFILES_DRY_RUN=1`、個別の `apps/*/install.sh --dry-run` も可）は、退避先・リンク先・変更件数を表示するだけで何も書き換えない。
   - gnome（dconf）と alttab（defaults）はリンクではなく import。違うキーだけを書き、書く前の値を `~/.local/state/dotfiles/<app>/` に残す。
   - git の identity は dotfiles に置かない。`apps/git/.gitconfig` は `useConfigOnly = true` と `~/.gitconfig.local` の include だけを持ち、どこでどの identity を使うかはマシンごとに `~/.gitconfig.local`（dotfiles の外）に書く。
+- claude: `apps/claude/CLAUDE.md` → `~/.claude/CLAUDE.md`（Windows も `$HOME\.claude\CLAUDE.md`）。Claude Code の全セッションに効くユーザーのルール。`~/.claude` には履歴や認証情報が同居するので、ディレクトリではなくファイルだけをリンクする。
 - 編集は dotfiles 側のファイルで行い、リンク先（`~/.config` など）を直接触らない。
 
 ## 壊さないための決めごと

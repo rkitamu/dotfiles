@@ -7,7 +7,7 @@ Write-Output "OS: Windows"
 Write-Output ""
 
 # List of app directories with install scripts
-$Apps = @("git", "vim", "vscode")
+$Apps = @("git", "vim", "vscode", "claude")
 
 foreach ($App in $Apps) {
     $Installer = Join-Path $ScriptDir "apps\$App\install.ps1"
