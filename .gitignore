@@ -1,5 +1,5 @@
 .DS_Store
 apps/karabiner/config/automatic_backups/
 
-# identity (git 管理外)
+# identity は ~/.config/git/ に置く。誤って repo に置いてもコミットしないように残す
 apps/git/personal.gitconfig

@@ -1,9 +1,7 @@
 # Refuse to commit where no account is assigned, so neither the personal nor the work identity leaks.
+# Which identity to use where is machine-specific: write includeIf in ~/.gitconfig.local (see README).
 [user]
 	useConfigOnly = true
-# Personal identity under ~/personal. install.sh links apps/git/personal.gitconfig (not in git) here.
-[includeIf "gitdir:~/personal/"]
-	path = ~/.config/git/personal.gitconfig
 [core]
 	editor = vim
 	autoCRLF = false

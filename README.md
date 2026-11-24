@@ -51,10 +51,17 @@ powershell -ExecutionPolicy Bypass -File vscode\install.ps1
 
 ## git
 
-identity が設定されていない場所ではコミットできない。`~/personal` 配下では個人の identity を使う。
-`apps/git/personal.gitconfig` (git 管理外) を手で置いてから install.sh を流す。
+identity が設定されていない場所ではコミットできない。どこでどの identity を使うかは、
+マシンごとに `~/.gitconfig.local` (dotfiles の外) に書く。
 
 ```ini
+# ~/.gitconfig.local
+[includeIf "gitdir:~/personal/"]
+	path = ~/.config/git/personal.gitconfig
+```
+
+```ini
+# ~/.config/git/personal.gitconfig
 [user]
 	name = Your Name
 	email = you@example.com
