@@ -50,7 +50,9 @@ jobs:
       - name: Run installer
         run: bash install.sh
       - name: Second run makes no changes
-        run: bash install.sh | tee out.txt && grep -q '=== Done: 0 change(s) ===' out.txt
+        run: |
+          bash install.sh | tee out.txt
+          grep -q '=== Done: 0 change(s) ===' out.txt
 
   install-macos:
     name: Install on macOS
@@ -68,7 +70,9 @@ jobs:
       - name: Run installer
         run: bash install.sh
       - name: Second run makes no changes
-        run: bash install.sh | tee out.txt && grep -q '=== Done: 0 change(s) ===' out.txt
+        run: |
+          bash install.sh | tee out.txt
+          grep -q '=== Done: 0 change(s) ===' out.txt
 
   install-windows:
     name: Install on Windows
