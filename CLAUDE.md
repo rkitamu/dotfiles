@@ -6,7 +6,11 @@
   - gnome（dconf）と alttab（defaults）はリンクではなく import。違うキーだけを書き、書く前の値を `~/.local/state/dotfiles/<app>/` に残す。
   - git の identity は dotfiles に置かない。`apps/git/.gitconfig` は `useConfigOnly = true` と `~/.gitconfig.local` の include だけを持ち、どこでどの identity を使うかはマシンごとに `~/.gitconfig.local`（dotfiles の外）に書く。
 - claude: `apps/claude/CLAUDE.md` → `~/.claude/CLAUDE.md`（Windows も `$HOME\.claude\CLAUDE.md`）。Claude Code の全セッションに効くユーザーのルール。`~/.claude` には履歴や認証情報が同居するので、ディレクトリではなくファイルだけをリンクする。
+  - macOS では claude と vscode の `install.sh` は何もしない。macOS のマシンは `~/.claude/CLAUDE.md` と VS Code の設定を dotfiles の外で管理している。
 - 編集は dotfiles 側のファイルで行い、リンク先（`~/.config` など）を直接触らない。
+- OS で変わる設定は、共通のファイルに条件分岐で書かず、`apps/<app>/macos.*` / `linux.*` に分ける。
+  - `install.sh` がその OS のファイルを `<リンク先>.os` としてリンクし、共通のファイルは `.os` があれば読み込む（ghostty の `config.os`、vim の `~/.vimrc.os`）。
+  - 片方の OS で足した設定は、もう片方でも要ると確かめるまで OS 別のファイルに置く。共通のファイルに置くと、pull しただけで別のマシンの振る舞いが変わるため。
 
 ## 壊さないための決めごと
 

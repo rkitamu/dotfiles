@@ -10,7 +10,9 @@ echo "[vscode] Installing VS Code settings..."
 # Determine VS Code config directory per OS
 case "$(uname -s)" in
   Darwin)
-    VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+    # macOS のマシンは VS Code の設定を dotfiles の外で管理している
+    echo "[vscode] macOS. Skipped."
+    exit 0
     ;;
   Linux)
     VSCODE_DIR="$HOME/.config/Code/User"
